@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="plugin" method="upgrade" group="hikashop" client="site">
+    <name>PLG_HIKASHOP_BFORDEREXPORT_XML_TITLE</name>
+    <creationDate>August 2020</creationDate>
+    <version>1.0.0</version>
+    <author>Jonathan Brain</author>
+    <authorEmail>brainforge.uk@btinternet.com</authorEmail>
+    <authorUrl>https://www.brainforge.co.uk</authorUrl>
+    <copyright>Copyright (C) 2020 Jonathan Brain - All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <description>PLG_HIKASHOP_BFORDEREXPORT_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="bforderexport">bforderexport.php</filename>
+        <folder>fields</folder>
+        <folder>help</folder>
+        <folder>language</folder>
+    </files>
+
+    <scriptfile>script.php</scriptfile>
+
+    <config>
+        <fields name="params">
+            <fieldset
+                    name="basic"
+            >
+                <field
+                        name="fields"
+                        type="subform"
+                        label="PLG_HIKASHOP_BFORDEREXPORT_FIELDS_LABEL"
+                        multiple="true"
+                        layout="joomla.form.field.subform.repeatable-table"
+                        addfieldpath="plugins/hikashop/bforderexport/fields"
+                >
+                    <form>
+                        <field
+                                name="column"
+                                type="brainforge.column"
+                                default=""
+                                label="PLG_HIKASHOP_BFORDEREXPORT_COLUMN_LABEL"
+                                multiple="false"
+                                required="true"
+                                class="input-xlarge"
+                        />
+                    </form>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server
+                type="extension"
+                priority="1"
+                name="PLG_HIKASHOP_BFORDEREXPORT_XML_TITLE">
+            https://brainforge.co.uk/component/bfupdater?element=plg_hikashop_bforderexport.xml
+        </server>
+    </updateservers>
+</extension>
