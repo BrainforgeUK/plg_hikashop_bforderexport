@@ -7,13 +7,16 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
+namespace Joomla\CMS\Toolbar\Button;
+
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Toolbar\ToolbarButton;
 
-class JToolbarButtonExport extends JButton
+class ExportButton extends ToolbarButton
 {
 	protected $name = 'Export';
 
@@ -47,9 +50,9 @@ function hikaExport(){
 		Factory::getDocument()->addScriptDeclaration($js);
 		if(!HIKASHOP_J30)
 		{
-			return '<a href="#" target="_blank" onclick="return hikaExport1();" class="toolbar"><span class="icon-32-archive" title="' . JText::_('HIKA_EXPORT', true) . '"></span>' . JText::_('HIKA_EXPORT') . '</a>';
+			return '<a href="#" target="_blank" onclick="return hikaExport1();" class="toolbar"><span class="icon-32-archive" title="' . Text::_('HIKA_EXPORT', true) . '"></span>' . JText::_('HIKA_EXPORT') . '</a>';
 		}
-		return '<button class="'.$btnClass.'" onclick="return hikaExport();"><i class="icon-upload"></i> '.JText::_('HIKA_EXPORT').'</button>';
+		return '<button class="'.$btnClass.'" onclick="return hikaExport();"><i class="icon-upload"></i> '.Text::_('HIKA_EXPORT').'</button>';
 	}
 
 	public function fetchId($type = 'Export', $html = '', $id = 'export') {
