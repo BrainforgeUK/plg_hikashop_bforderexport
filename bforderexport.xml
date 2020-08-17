@@ -14,6 +14,7 @@
         <folder>fields</folder>
         <folder>help</folder>
         <folder>language</folder>
+        <folder>toolbar</folder>
     </files>
 
     <scriptfile>script.php</scriptfile>

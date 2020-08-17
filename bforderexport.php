@@ -23,6 +23,21 @@ class plgHikashopBFOrderExport extends CMSPlugin
 		parent::__construct($subject, $config);
 	}
 
+	public function onHikashopAfterDisplayView(&$view)
+	{
+		if (!hikashop_isClient('administrator'))
+		{
+			return;
+		}
+
+		switch(get_class($view))
+		{
+			case 'OrderViewOrder':
+				require_once __DIR__ . '/toolbar/buttonexport.php';
+				break;
+		}
+	}
+
 	public function onBeforeOrderExportQuery(&$filters, $paramBase)
 	{
 		foreach(array('search', 'order_created', 'order_id') as $filterType) {
